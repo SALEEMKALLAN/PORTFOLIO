@@ -1,3 +1,1726 @@
-SSASA
-JJ
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Saleem Kallan - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2a6496;
+            --secondary-color: #4a8bc2;
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --section-bg: #fff;
+            --border-color: #ddd;
+            --demo-btn-color: #28a745;
+            --demo-btn-hover: #218838;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(#0b1c3a, #07182f);
+            color: white;
+            padding: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Galaxy Background */
+        .galaxy-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 6s infinite;
+        }
+        
+        @keyframes twinkle {
+            0% {opacity: 0;}
+            50% {opacity: 0.8;}
+            100% {opacity: 0;}
+        }
+        
+        .moving-star {
+            opacity: 0.8;
+            animation: none;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-text h1, 
+        .profile-text h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .view-demos-link {
+            color: white;
+            background-color: var(--demo-btn-color);
+            border-radius: 4px;
+            margin: 8px 10px;
+            padding: 7px 15px !important;
+        }
+
+        .view-demos-link:hover {
+            background-color: var(--demo-btn-hover) !important;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--secondary-color);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 101;
+        }
+
+        .dropdown-content a {
+            padding: 12px 20px;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        section h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            min-width: 200px;
+            flex: 1;
+        }
+
+        .contact-info i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 25px;
+            text-align: center;
+        }
+        /* Language Skills Section */
+        .language-skills {
+            margin-top: 30px;
+        }
+
+        .language-item {
+            margin-bottom: 15px;
+        }
+
+        .language-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .language-description {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .language-level {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .language-progress {
+            height: 100%;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+        }
+
+        .level-C1 { width: 90%; background-color: #2a6496; }
+        .level-B2 { width: 75%; background-color: #4a8bc2; }
+        .level-B1 { width: 60%; background-color: #7bb5e8; }
+        .level-A2 { width: 45%; background-color: #a7cef0; }
+        .level-Native { width: 100%; background-color: #1a4971; }
+
+        .level-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .level-label {
+            padding: 2px 6px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        /* Experience and Education */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+            border-left: 2px solid var(--primary-color);
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .timeline-position {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-company {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .timeline-company a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .timeline-company a:hover {
+            text-decoration: underline;
+        }
+
+        .timeline-duties {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .timeline-duties li {
+            margin-bottom: 5px;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .skill-category h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .project-desc {
+            margin-bottom: 15px;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .btn-demo {
+            background-color: var(--demo-btn-color);
+        }
+
+        .btn-demo:hover {
+            background-color: var(--demo-btn-hover);
+        }
+
+        .project-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+footer {
+    background: linear-gradient(#0b1c3a, #07182f);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}}
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Collapsible Sections */
+        .collapsible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border-bottom: none;
+        }
+
+        .collapsible-header i {
+            transition: transform 0.3s;
+        }
+
+        .collapsible-content {
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .collapsed .collapsible-content {
+            max-height: 0;
+        }
+
+        .collapsed .collapsible-header i {
+            transform: rotate(-90deg);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: var(--section-bg);
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .modal-iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown-content {
+                position: static;
+                width: 100%;
+            }
+
+            .contact-info div {
+                min-width: 100%;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+            
+            .modal-iframe {
+                height: 300px;
+            }
+            
+            .view-demos-link {
+                margin: 5px 0;
+                border-radius: 0;
+            }
+        }
+
+        /* Dark Mode Toggle */
+        .theme-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .theme-switch label {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .dark-mode {
+            --primary-color: #1a4971;
+            --secondary-color: #2c5d8a;
+            --background-color: #121212;
+            --text-color: #f5f5f5;
+            --section-bg: #1e1e1e;
+            --border-color: #444;
+        }
+
+        .dark-mode .skill-list li {
+            background-color: #333;
+        }
+
+        .dark-mode .project-card {
+            background-color: #2a2a2a;
+        }
+
+        .dark-mode .timeline-company a {
+            color: #7bb5e8;
+        }
+
+        /* Social media icons styling */
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ccc;
+        }
+        .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Galaxy background controls */
+        .galaxy-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 99;
+            max-width: 300px;
+            transition: opacity 0.3s;
+            opacity: 0.3;
+        }
+        
+        .galaxy-controls:hover {
+            opacity: 1;
+        }
+
+        .galaxy-control-title {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .galaxy-control-title button {
+            background: none;
+            border: none;
+            color: #555;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 2px 5px;
+        }
+
+        .controls-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .controls-expanded .controls-content {
+            max-height: 250px;
+        }
+
+        .slider-container {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .slider-container label {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .slider-container input {
+            flex: 2;
+        }
+
+        .value-display {
+            width: 30px;
+            text-align: right;
+            margin-left: 5px;
+        }
+
+        .galaxy-controls button.control-btn {
+            padding: 4px 8px;
+            margin-right: 5px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+            .hamburger-menu {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 10;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .hamburger-menu span {
+        width: 30px;
+        height: 3px;
+        background: white;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+    }
+
+    .mobile-nav-active .hamburger-menu span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-nav-active .hamburger-menu span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-nav-active .hamburger-menu span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    @media (max-width: 768px) {
+        .hamburger-menu {
+            display: flex;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--secondary-color);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            z-index: 99;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        .mobile-nav-active nav ul {
+            max-height: 500px;
+        }
+
+        nav ul li {
+            width: 100%;
+        }
+
+        nav ul li a {
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-content {
+            position: static;
+            box-shadow: none;
+            width: 100%;
+            padding-left: 20px;
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        .dropdown-content a {
+            padding: 10px 15px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: none;
+        }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+        .dropdown > a:after {
+            content: "▼";
+            margin-left: 5px;
+            font-size: 10px;
+        }
+
+        .view-demos-link {
+            margin: 10px 15px;
+        }
+    }
+    .timeline-item {
+        padding-left: 20px;
+        margin-bottom: 25px;
+        width: 100%;
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+    
+    /* Special fix specifically for the Jacobs Coffee section */
+    #jacobs {
+        display: block !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        /* Force it to be visible */
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Make sure all duties lists are properly visible */
+    .timeline-duties {
+        display: block !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="galaxy-background" id="galaxyBackground"></div>
+        <div class="container profile-container">
+            <img src="Photo.jpg" alt="Muhammed Saleem Kallan" class="profile-image">
+            <div class="profile-text">
+                <h1>Muhammed Saleem Kallan</h1>
+                <h2>M.Eng - Mechatronic and Cyber Physical Systems</h2>
+            </div>
+        </div>
+        <div class="theme-switch">
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+            <label for="themeToggle"><i class="fas fa-moon"></i></label>
+        </div>
+    </header>
+
+    <nav>
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li class="dropdown">
+                <a href="#experience">Experience <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#bosch">BSH Hausgeräte</a>
+                    <a href="#jacobs">Jacobs Coffee</a>
+                    <a href="#airport">Calicut Internatonal Airport</a>
+                </div>
+            </li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects" class="view-demos-link">View Project Demos</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <h3 class="collapsible-header">About Me <i class="fas fa-chevron-down"></i></h3>
+            <div class="collapsible-content">
+        <p>Im at the final phases of my masters in Mechatronic and Cyber-Physical Systems Engineering with a strong foundation in mechanical engineering and a growing passion for AI-driven technologies. My academic and project experience includes developing intelligent systems such as AI chatbots, optimizing automation workflows, and analyzing complex datasets.</p>
+        <p>Proficient in Python, C++, and SQL, I enjoy solving technical challenges that combine both hardware and software. I'm also familiar with reading P&ID diagrams, understanding industrial processes, and documenting technical data with clarity and accuracy.</p>
+        <p>Through my coursework and projects, I've developed a structured, problem-solving mindset and strong time management skills. I've also had the chance to collaborate in multicultural team settings, which helped me improve my communication and teamwork abilities.</p>
+        <p>I'm eager to apply what I've learned, contribute to real-world projects, and keep growing as an engineer.</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3 class="collapsible-header">Work Experience <i class="fas fa-chevron-down"></i></h3>
+            <div class="collapsible-content">
+                <div class="timeline-item" id="bosch">
+                    <div class="timeline-date">08/2024 - 01/2025</div>
+                    <div class="timeline-position">Master Thesis: PoC for Chatbot Development</div>
+                    <div class="timeline-company"><a href="https://www.bsh-group.com/" target="_blank">Bosch and Siemens Hausgeräte, Munich</a></div>
+                    <p>Developed an AI-driven solution using cutting-edge technologies to improve internal knowledge access.</p>
+                    <ul class="timeline-duties">
+                        <li>Developed an AI-driven chatbot leveraging large language models and natural language processing for internal data using RAG from Elasticsearch and MySQL database.</li>
+                        <li>Implemented semantic and vector search using Elasticsearch.</li>
+                        <li>Developed various chatbot models utilizing Azure and Power Virtual Agents.</li>
+                        <li>Implemented solutions for large and complex data handling.</li>
+                        <li>Created web scraping and browser automation tools.</li>
+                        <li>Developed frontend interfaces using Flask framework.</li>
+                    </ul>
+                    <div class="buttons">
+                        <button class="btn btn-demo" onclick="openModal('chatbot-demo-modal')"><i class="fas fa-desktop"></i> View Demo</button>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">09/2023 - 07/2024</div>
+                    <div class="timeline-position">Working Student at GDE Business Excellence Dept.</div>
+                    <div class="timeline-company"><a href="https://www.bsh-group.com/" target="_blank">Bosch and Siemens Hausgeräte, Munich</a></div>
+                    <ul class="timeline-duties">
+                        <li>Demonstrated ability to analyze complex datasets and translate them into easily understandable visualizations using Power BI, M programming, and DAX Studio.</li>
+                        <li>Created and maintained project documentation and workflows using Jira and Confluence for cross-functional teams.</li>
+                        <li>Designed and implemented automated business workflows using Power Automate.</li>
+                        <li>Developed process diagrams and workflow visualizations using MS Visio and Miro to improve departmental efficiency.</li>
+                        <li>Supported continuous integration/continuous deployment (CI/CD) processes using JFrog and Jenkins.</li>
+                        <li>Created and managed collaboration spaces in SharePoint for document management and team communication.</li>
+                        <li>Process redesigning using HTML and CSS to improve internal web tools.</li>
+                        <li>Conducted software compatibility testing across multiple platforms and environments.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" id="jacobs">
+                    <div class="timeline-date">11/2022 - 04/2023</div>
+                    <div class="timeline-position">Project Management Intern</div>
+                    <div class="timeline-company"><a href="https://www.jacobsdouweegberts.com/" target="_blank">Jacobs Coffee (JDE Peets), Bremen</a></div>
+                    <ul class="timeline-duties">
+                        <li>Supported Project Engineers and Managers in the development of projects while adhering to specified time targets.</li>
+                        <li>Prepared and updated project management documents and process standards for various production processes.</li>
+                        <li>Identified potential suppliers for various systems and conducted comparative analysis of offers and quotations.</li>
+                        <li>Applied Total Cost Analysis (TCO) methodology to determine the most suitable suppliers for coffee grinders.</li>
+                        <li>Conducted thorough quality checks on packaging of new products to ensure consistency with brand standards.</li>
+                        <li>Collaborated with packaging department to successfully introduce new products to market.</li>
+                        <li>Modified packaging manuals and analyzed data from various JDE plants around the globe.</li>
+                        <li>Performed experimental studies on heat exchangers to ensure efficient heat transfer, pressure drop, and fluid flow.</li>
+                        <li>Researched automatic sampling systems to improve production quality control processes.</li>
+                        <li>Studied big bag filling machines to optimize transportation efficiency.</li>
+                        <li>Visited multiple production plants and demonstrated proficiency in reading and interpreting P&ID diagrams.</li>
+                        <li>Contributed to sustainability initiatives including analysis of coffee residue pyrolysis and hydrogen energy projects.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" id="airport">
+                    <div class="timeline-date">10/2020 - 01/2021</div>
+                    <div class="timeline-position">Internship at Mechanical Engineering Dept.</div>
+                    <div class="timeline-company"><a href="https://www.aai.aero/en/airports/calicut" target="_blank">Calicut International Airport</a></div>
+                    <ul class="timeline-duties">
+                        <li>Maintained and monitored fire engines and other mechanical equipment.</li>
+                        <li>Provided technical support and prepared reports.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h3 class="collapsible-header">Education <i class="fas fa-chevron-down"></i></h3>
+            <div class="collapsible-content">
+                <div class="timeline-item">
+                    <div class="timeline-date">10/2021 - Present</div>
+                    <div class="timeline-position">M.Eng. Mechatronic and CyberPhysical Systems</div>
+                    <div class="timeline-company"><a href="https://www.th-deg.de/en/" target="_blank">Deggendorf Institute of Technology, Bavaria, Germany</a></div>
+                    <p>Focused on advanced robotics, machine learning, autonomous systems, additive manufacturing, 3D printing, cyberphysical systems, and functional safety. <a href="https://www.th-deg.de/Studierende/Antraege-und-Organisatorisches/Modulhandbuecher/modulhandbuch_mmc_master_ws2024_mbmk.pdf" target="_blank" class="btn">View Curriculum</a></p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">08/2016 - 09/2020</div>
+                    <div class="timeline-position">Bachelor of Technology in Mechanical Engineering</div>
+                    <div class="timeline-company"><a href="https://www.geckkd.ac.in/" target="_blank">Government Engineering College, Kozhikode, India</a></div>
+                    <p>Bachelor thesis: SI Engine emission and characteristics for Ethanol-Butanol & gasoline blends.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h3 class="collapsible-header">Skills <i class="fas fa-chevron-down"></i></h3>
+            <div class="collapsible-content">
+              <div class="skills-container">
+                  <div class="skill-category">
+                      <h4>Programming Languages</h4>
+                      <ul class="skill-list">
+                          <li>Python</li>
+                          <li>C++</li>
+                          <li>SQL</li>
+                          <li>Matlab</li>
+                          <li>Lua</li>
+                          <li>R Programming</li>
+                          <li>CSS & HTML</li>
+                      </ul>
+                  </div>
+
+                  <div class="skill-category">
+                      <h4>Data & AI Technologies</h4>
+                      <ul class="skill-list">
+                          <li>Natural Language Processing (NLP)</li>
+                          <li>Web Scraping</li>
+                          <li>Elasticsearch</li>
+                          <li>RAG & Langchain</li>
+                          <li>Power BI</li>
+                          <li>PowerQuery</li>
+                          <li>DAX Studio</li>
+                      </ul>
+                  </div>
+
+                  <div class="skill-category">
+                      <h4>Tools & Technologies</h4>
+                      <ul class="skill-list">
+                          <li>Jira & Confluence</li>
+                          <li>Power Automate</li>
+                          <li>MS Visio & Miro</li>
+                          <li>JFrog & Jenkins</li>
+                          <li>SharePoint</li>
+                          <li>Selenium</li>
+                          <li>Azure</li>
+                          <li>MS Office</li>
+                          <li>MS Project</li>
+                      </ul>
+                  </div>
+
+                  <div class="skill-category">
+                      <h4>Engineering & Design</h4>
+                      <ul class="skill-list">
+                          <li>P&ID Diagram Reading</li>
+                          <li>3D Modeling</li>
+                          <li>Blender</li>
+                          <li>Solidworks</li>
+                          <li>AutoCAD</li>
+                      </ul>
+                  </div>
+                  
+                  <div class="skill-category">
+                      <h4>Professional Capabilities</h4>
+                      <ul class="skill-list">
+                          <li>Project Management</li>
+                          <li>Supplier Analysis</li>
+                          <li>Total Cost Analysis (TCO)</li>
+                          <li>Process Standardization</li>
+                          <li>Quality Assurance</li>
+                          <li>Technical Documentation</li>
+                          <li>Team Collaboration</li>
+                          <li>Time Management</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="projects">
+          <h3 class="collapsible-header">Projects and Achievements <i class="fas fa-chevron-down"></i></h3>
+          <div class="collapsible-content">
+              <div class="projects-grid">
+                  <div class="project-card">
+                      <h4 class="project-title">AI-Driven Chatbot Development</h4>
+                      <p class="project-desc">Developed an advanced chatbot using large language models, RAG, and Elasticsearch for internal knowledge management at Bosch and Siemens.</p>
+                      <div class="project-buttons">
+                          <button class="btn btn-demo" onclick="openModal('chatbot-demo-modal')"><i class="fas fa-desktop"></i> View Demo</button>
+                      </div>
+                  </div>
+
+                  <div class="project-card">
+                      <h4 class="project-title">Data Visualization Suite</h4>
+                      <p class="project-desc">Created comprehensive dashboards for complex business data using Power BI and DAX, enabling data-driven decision making.</p>
+                      <div class="project-buttons">
+                          <button class="btn btn-demo" onclick="openModal('data-viz-demo-modal')"><i class="fas fa-desktop"></i> View Demo</button>
+                      </div>
+                  </div>
+
+
+
+                  <div class="project-card">
+                    <h4 class="project-title">3D Design using Lua Programming</h4>
+                    <p class="project-desc">Designed a centrifugal single vane diagonal pump and various gear systems using Lua programming language and IceSL.</p>
+                    <div class="project-buttons">
+                        <button class="btn btn-demo" onclick="openModal('3d-design-demo-modal')"><i class="fas fa-desktop"></i> View Demo</button>
+                    </div>
+                </div>
+                
+                <!-- Close the current projects-grid div -->
+                </div>
+                
+                <!-- Add the miscellaneous section with heading -->
+<h4 style="margin-top: 30px; margin-bottom: 15px; color: var(--primary-color);">Other Learning Projects</h4>
+<p style="margin-bottom: 20px;">A few additional projects I've worked on as part of my ongoing learning journey. While still developing my skills in these areas, I'm sharing them to document my growth and exploration in different technical domains.</p>
+                
+                <!-- Start a new projects grid for miscellaneous projects -->
+                <div class="project-card">
+                  <h4 class="project-title">GIS Land Use Analysis</h4>
+                  <p class="project-desc">Created a comprehensive land use and land cover classification analysis for Freising, Bavaria using Quantum GIS. Conducted detailed remote sensing analysis in R programming to identify erosion-prone zones and assess forest health conditions through NDVI analysis from 2019-2022.</p>
+                  <div class="project-buttons">
+                      <button class="btn btn-demo" onclick="openModal('pdf-demo1-modal')"><i class="fas fa-file-pdf"></i> View Poster</button>
+                  </div>
+              </div>
+              
+              <div class="project-card">
+                  <h4 class="project-title">Dendroecological Analysis of Tree Species</h4>
+                  <p class="project-desc">Conducted time series analysis in R programming to assess drought resilience in native and non-native tree species. Compared growth patterns of Douglas Fir, Norway Spruce, and Pedunculate Oak in Southern Germany, analyzing their responses to significant drought events in 1976 and 2003.</p>
+                  <div class="project-buttons">
+                      <button class="btn btn-demo" onclick="openModal('pdf-demo2-modal')"><i class="fas fa-file-pdf"></i> View Report</button>
+                  </div>
+              </div>
+          </div>
+      </section>
+              
+      <section id="languages">
+          <h3 class="collapsible-header">Language Skills <i class="fas fa-chevron-down"></i></h3>
+          <div class="collapsible-content">
+              <div class="language-skills">
+                  <div class="level-indicator">
+                      <span>Beginner</span>
+                      <span>Elementary</span>
+                      <span>Intermediate</span>
+                      <span>Advanced</span>
+                      <span>Native</span>
+                  </div>
+                  
+                  <div class="language-item">
+                      <div class="language-name">
+                          Malayalam <span class="level-label">Native</span>
+                      </div>
+                      <div class="language-description">Native language of Kerala, India</div>
+                      <div class="language-level">
+                          <div class="language-progress level-Native"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="language-item">
+                      <div class="language-name">
+                          English <span class="level-label">C1</span>
+                      </div>
+                      <div class="language-description">Advanced proficiency</div>
+                      <div class="language-level">
+                          <div class="language-progress level-C1"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="language-item">
+                      <div class="language-name">
+                          Hindi <span class="level-label">B2</span>
+                      </div>
+                      <div class="language-description">Upper intermediate proficiency</div>
+                      <div class="language-level">
+                          <div class="language-progress level-B2"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="language-item">
+                      <div class="language-name">
+                          German <span class="level-label">B1</span>
+                      </div>
+                      <div class="language-description">Intermediate proficiency</div>
+                      <div class="language-level">
+                          <div class="language-progress level-B1"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="language-item">
+                      <div class="language-name">
+                          Urdu <span class="level-label">B1</span>
+                      </div>
+                      <div class="language-description">Intermediate proficiency</div>
+                      <div class="language-level">
+                          <div class="language-progress level-B1"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="language-item">
+                      <div class="language-name">
+                          Tamil <span class="level-label">A2</span>
+                      </div>
+                      <div class="language-description">Elementary proficiency</div>
+                      <div class="language-level">
+                          <div class="language-progress level-A2"></div>
+                      </div>
+                  </div>
+                  
+                  <div class="language-item">
+                      <div class="language-name">
+                          Arabic <span class="level-label">A2</span>
+                      </div>
+                      <div class="language-description">Elementary proficiency</div>
+                      <div class="language-level">
+                          <div class="language-progress level-A2"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+                  
+      <section id="contact">
+          <h3>Contact Information</h3>
+          <div class="contact-info">
+              <div>
+                  <i class="fas fa-phone"></i>
+                  <span>+49 15141334357</span>
+              </div>
+              <div>
+                  <i class="fas fa-envelope"></i>
+                  <span>kallensaleem@gmail.com</span>
+              </div>
+              <div>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Klinikum Großharden, München.</span>
+              </div>
+              <div>
+                  <i class="fas fa-calendar"></i>
+                  <span>DoB: 07/07/1998</span>
+              </div>
+
+          </div>
+
+          <div class="buttons">
+              <a href="mailto:kallensaleem@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
+              <a href="https://www.linkedin.com/in/muhammed-saleem-kallan-499227127/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+              <a href="https://github.com/saleemkallen" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+      </section>
+
+  </main>
+  
+  <!-- Demo Modals -->
+  <div id="chatbot-demo-modal" class="modal">
+      <div class="modal-content">
+          <span class="close-modal" onclick="closeModal('chatbot-demo-modal')">&times;</span>
+          <div class="modal-header">
+              <h3>AI-Driven Chatbot Demo</h3>
+          </div>
+          <div class="modal-body">
+              <p>This demonstration showcases my AI-driven chatbot developed during my Master's thesis at Bosch and Siemens. The chatbot leverages large language models, retrieval augmented generation (RAG), and Elasticsearch to provide accurate responses to internal knowledge queries.</p>
+              <iframe class="modal-iframe" src="about:blank" data-src="0408(3).mp4"></iframe>
+              <p><em>Note: In a live implementation, this would be connected to the actual chatbot project.</em></p>
+          </div>
+      </div>
+  </div>
+  
+  <div id="data-viz-demo-modal" class="modal">
+      <div class="modal-content">
+          <span class="close-modal" onclick="closeModal('data-viz-demo-modal')">&times;</span>
+          <div class="modal-header">
+              <h3>Data Visualization Demo</h3>
+          </div>
+          <div class="modal-body">
+              <p>This demo shows the demo of the interactive cover page for a PBI report. Further informations cant be shown due to data security regulations </p>
+              <iframe class="modal-iframe" src="about:blank" data-src="PBI_Dashbord_UI.png"></iframe>
+              <p><em>Note: In a live implementation, this would be connected to actual Power BI dashboards.</em></p>
+          </div>
+      </div>
+  </div>
+  
+  
+  
+  <div id="3d-design-demo-modal" class="modal">
+      <div class="modal-content">
+          <span class="close-modal" onclick="closeModal('3d-design-demo-modal')">&times;</span>
+          <div class="modal-header">
+              <h3>3D Design Portfolio</h3>
+          </div>
+          <div class="modal-body">
+              <p>This demonstration showcases my 3D modeling work using Lua programming and IceSL, featuring the centrifugal single vane diagonal pump and various gear systems I've designed.</p>
+              <iframe class="modal-iframe" src="about:blank" data-src="pump demo.mp4"></iframe>
+              <p><em>Note: In a live implementation, this would display actual 3D models.</em></p>
+          </div>
+      </div>
+  </div>
+  
+  <div id="pdf-demo1-modal" class="modal">
+      <div class="modal-content">
+          <span class="close-modal" onclick="closeModal('pdf-demo1-modal')">&times;</span>
+          <div class="modal-header">
+              <h3>Land Use and Land Cover Analysis - GIS Project</h3>
+          </div>
+          <div class="modal-body">
+              <p>This poster presents a comprehensive land use and land cover analysis for the Freising region in Bavaria, Germany. The study identifies critical environmental factors including:</p>
+              <ul style="margin-bottom: 15px;">
+                  <li>Erosion-prone zones requiring sustainable land management</li>
+                  <li>NDVI vegetation health analysis across 2019-2022</li>
+                  <li>Soil composition analysis and classification</li>
+                  <li>Forest condition monitoring showing climate impact on regional forests</li>
+              </ul>
+              <iframe class="modal-iframe" src="about:blank" data-src="GIS_Land_use_Land_Cover.pdf"></iframe>
+              <p><em>The analysis highlights key areas where conservation practices or reforestation would be more beneficial than intensive agriculture based on LS and K factor measurements.</em></p>
+          </div>
+      </div>
+  </div>
+  
+  <div id="pdf-demo2-modal" class="modal">
+      <div class="modal-content">
+          <span class="close-modal" onclick="closeModal('pdf-demo2-modal')">&times;</span>
+          <div class="modal-header">
+              <h3>Drought Resilience in Native and Non-Native Tree Species</h3>
+          </div>
+          <div class="modal-body">
+              <p>This research examines the drought resilience of three tree species in Southern Germany using dendroecological methods:</p>
+              <ul style="margin-bottom: 15px;">
+                  <li>Compared growth responses of Douglas Fir, Norway Spruce, and Pedunculate Oak to the 1976 and 2003 droughts</li>
+                  <li>Analyzed long-term climatic influences on tree growth using response function analysis</li>
+                  <li>Evaluated climate adaptation potential of non-native species (Douglas Fir) vs. native species</li>
+                  <li>Applied statistical validation using R-squared values and Wilcoxon rank-sum tests</li>
+              </ul>
+              <iframe class="modal-iframe" src="about:blank" data-src="Time_series_analysis.pdf"></iframe>
+              <p><em>The findings suggest Pedunculate Oak shows the highest drought resilience, while Douglas Fir demonstrates improving adaptation over time, making it a potential alternative for climate-resilient forestry.</em></p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Galaxy background controls -->
+  <div class="galaxy-controls" id="galaxyControls">
+
+      <div class="controls-content" id="controlsContent">
+          <div class="slider-container">
+              <label for="starCount">Stars:</label>
+              <input type="range" id="starCount" min="50" max="300" value="150">
+              <span class="value-display" id="starCountValue">150</span>
+          </div>
+          <div class="slider-container">
+              <label for="starSize">Max Size:</label>
+              <input type="range" id="starSize" min="1" max="5" step="0.5" value="3">
+              <span class="value-display" id="starSizeValue">3</span>
+          </div>
+          <div class="slider-container">
+              <label for="starOpacity">Opacity:</label>
+              <input type="range" id="starOpacity" min="0.1" max="1" step="0.1" value="0.8">
+              <span class="value-display" id="starOpacityValue">0.8</span>
+          </div>
+          <div class="slider-container">
+              <label for="cometCount">Comets:</label>
+              <input type="range" id="cometCount" min="0" max="10" value="5">
+              <span class="value-display" id="cometCountValue">5</span>
+          </div>
+          <div style="display: flex; justify-content: center; margin-top: 10px;">
+              <button class="control-btn" id="applyBtn">Apply</button>
+              <button class="control-btn" id="resetBtn">Reset</button>
+          </div>
+      </div>
+  </div>
+
+  <footer>
+      <div class="galaxy-background" id="footerGalaxyBackground"></div>
+      <div class="container">
+          <p>&copy; 2025 Muhammed Saleem Kallan. All rights reserved.</p>
+          <div class="social-icons">
+              <a href="https://www.linkedin.com/in/muhammed-saleem-kallan-499227127/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/saleemkallen" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://twitter.com/yourtwitterhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+      // Default settings for galaxy background
+      let settings = {
+          starCount: 150,
+          starSize: 3,
+          starOpacity: 0.8,
+          cometCount: 5
+      };
+      
+      // Update slider displays
+      function updateSliderDisplays() {
+          document.getElementById('starCountValue').textContent = settings.starCount;
+          document.getElementById('starSizeValue').textContent = settings.starSize;
+          document.getElementById('starOpacityValue').textContent = settings.starOpacity;
+          document.getElementById('cometCountValue').textContent = settings.cometCount;
+      }
+      
+      // Initialize slider values
+      document.getElementById('starCount').value = settings.starCount;
+      document.getElementById('starSize').value = settings.starSize;
+      document.getElementById('starOpacity').value = settings.starOpacity;
+      document.getElementById('cometCount').value = settings.cometCount;
+      updateSliderDisplays();
+      
+      // Create the galaxy background
+      function createGalaxy(containerId) {
+          const galaxyBackground = document.getElementById(containerId);
+          if (!galaxyBackground) return;
+          
+          // Clear existing stars
+          galaxyBackground.innerHTML = '';
+          
+          // Create stars
+          for (let i = 0; i < settings.starCount; i++) {
+              const star = document.createElement('div');
+              star.className = 'star';
+              
+              // Random size between 1px and max star size
+              const size = Math.random() * (settings.starSize - 1) + 1;
+              star.style.width = `${size}px`;
+              star.style.height = `${size}px`;
+              
+              // Random position
+              const posX = Math.random() * 100;
+              const posY = Math.random() * 100;
+              star.style.left = `${posX}%`;
+              star.style.top = `${posY}%`;
+              
+              // Random animation delay
+              const delay = Math.random() * 6;
+              star.style.animationDelay = `${delay}s`;
+              
+              // Set opacity for animation
+              star.style.animation = `twinkle 6s infinite`;
+              
+              // Add star to galaxy
+              galaxyBackground.appendChild(star);
+          }
+          
+          // Create comets/shooting stars
+          for (let i = 0; i < settings.cometCount; i++) {
+              createMovingStar(containerId);
+          }
+      }
+      
+      function createMovingStar(containerId) {
+          const galaxyBackground = document.getElementById(containerId);
+          if (!galaxyBackground) return;
+          
+          const movingStar = document.createElement('div');
+          movingStar.className = 'star moving-star';
+          
+          // Slightly larger than regular stars
+          const size = Math.random() * 3 + 2;
+          movingStar.style.width = `${size}px`;
+          movingStar.style.height = `${size}px`;
+          
+          // Start position (off-screen)
+          const startX = -5;
+          const startY = Math.random() * 100;
+          movingStar.style.left = `${startX}%`;
+          movingStar.style.top = `${startY}%`;
+          
+          // Add to galaxy
+          galaxyBackground.appendChild(movingStar);
+          
+          // Animate movement
+          const duration = Math.random() * 10000 + 5000; // 5-15 seconds
+          
+          movingStar.style.opacity = settings.starOpacity;
+          movingStar.style.transition = `transform ${duration}ms linear, opacity 1s`;
+          
+          setTimeout(() => {
+              movingStar.style.transform = 'translateX(110vw)';
+          }, 100);
+          
+          // Remove after animation and create a new one
+          setTimeout(() => {
+              if (document.body.contains(movingStar)) {
+                  movingStar.remove();
+                  createMovingStar(containerId);
+              }
+          }, duration + 1000);
+      }
+      
+      // Apply button click handler
+      document.getElementById('applyBtn').addEventListener('click', function() {
+          settings.starCount = parseInt(document.getElementById('starCount').value);
+          settings.starSize = parseFloat(document.getElementById('starSize').value);
+          settings.starOpacity = parseFloat(document.getElementById('starOpacity').value);
+          settings.cometCount = parseInt(document.getElementById('cometCount').value);
+          
+          createGalaxy('galaxyBackground');
+          createGalaxy('footerGalaxyBackground');
+          updateSliderDisplays();
+      });
+      
+      // Reset button click handler
+      document.getElementById('resetBtn').addEventListener('click', function() {
+          settings = {
+              starCount: 150,
+              starSize: 3,
+              starOpacity: 0.8,
+              cometCount: 5
+          };
+          
+          document.getElementById('starCount').value = settings.starCount;
+          document.getElementById('starSize').value = settings.starSize;
+          document.getElementById('starOpacity').value = settings.starOpacity;
+          document.getElementById('cometCount').value = settings.cometCount;
+          
+          createGalaxy('galaxyBackground');
+          createGalaxy('footerGalaxyBackground');
+          updateSliderDisplays();
+      });
+      
+      // Update display values when sliders change
+      document.getElementById('starCount').addEventListener('input', function() {
+          document.getElementById('starCountValue').textContent = this.value;
+      });
+      
+      document.getElementById('starSize').addEventListener('input', function() {
+          document.getElementById('starSizeValue').textContent = this.value;
+      });
+      
+      document.getElementById('starOpacity').addEventListener('input', function() {
+          document.getElementById('starOpacityValue').textContent = this.value;
+      });
+      
+      document.getElementById('cometCount').addEventListener('input', function() {
+          document.getElementById('cometCountValue').textContent = this.value;
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+    // Toggle controls visibility
+    document.getElementById('toggleControls').addEventListener('click', function () {
+        const galaxyControls = document.getElementById('galaxyControls');
+        galaxyControls.classList.toggle('controls-expanded');
+        this.textContent = galaxyControls.classList.contains('controls-expanded') ? 'Hide' : 'Show';
+    });
+
+    // Remove 'collapsed' class to keep all sections expanded on load
+    document.querySelectorAll('.collapsible-section').forEach(section => {
+        section.classList.remove('collapsed');
+    });
+
+    // Enable click-to-collapse/toggle
+    document.querySelectorAll('.collapsible-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const section = header.parentElement;
+            section.classList.toggle('collapsed');
+        });
+    });
+});
+
+
+      // Dark mode toggle
+      const themeToggle = document.getElementById('themeToggle');
+      themeToggle.addEventListener('change', () => {
+          document.body.classList.toggle('dark-mode', themeToggle.checked);
+          // Save preference to local storage
+          localStorage.setItem('darkMode', themeToggle.checked);
+      });
+
+      // Check for saved preference
+      if (localStorage.getItem('darkMode') === 'true') {
+          themeToggle.checked = true;
+          document.body.classList.add('dark-mode');
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              
+              if (this.getAttribute('href') === '#') return;
+              
+              const targetId = this.getAttribute('href');
+              const targetElement = document.querySelector(targetId);
+              
+              if (targetElement) {
+                  window.scrollTo({
+                      top: targetElement.offsetTop - 70,
+                      behavior: 'smooth'
+                  });
+              }
+          });
+      });
+      
+      // Modal functions
+      function openModal(modalId) {
+          const modal = document.getElementById(modalId);
+          if (!modal) return;
+          
+          // Set the iframe src only when opening to improve performance
+          const iframe = modal.querySelector('.modal-iframe');
+          if (iframe && iframe.getAttribute('src') === 'about:blank') {
+              const dataSrc = iframe.getAttribute('data-src');
+              if (dataSrc) {
+                  iframe.setAttribute('src', dataSrc);
+              }
+          }
+          
+          modal.style.display = 'block';
+          document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      }
+      
+      function closeModal(modalId) {
+          const modal = document.getElementById(modalId);
+          if (!modal) return;
+          
+          modal.style.display = 'none';
+          document.body.style.overflow = ''; // Restore scrolling
+      }
+      
+      // Close modal when clicking outside of modal content
+      window.onclick = function(event) {
+          document.querySelectorAll('.modal').forEach(modal => {
+              if (event.target === modal) {
+                  modal.style.display = 'none';
+                  document.body.style.overflow = ''; // Restore scrolling
+              }
+          });
+      }
+      
+      // Close modal when pressing escape key
+      document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+              document.querySelectorAll('.modal').forEach(modal => {
+                  if (modal.style.display === 'block') {
+                      modal.style.display = 'none';
+                      document.body.style.overflow = ''; // Restore scrolling
+                  }
+              });
+          }
+      });
+      
+      // Initialize galaxy backgrounds when page loads
+      window.addEventListener('load', function() {
+          createGalaxy('galaxyBackground');
+          createGalaxy('footerGalaxyBackground');
+          
+          // Collapse all sections by default except the first one
+         // document.querySelectorAll('section').forEach((section, index) => {
+          //   if (index > 0) {
+          //        section.classList.add('collapsed');
+           //   }
+         // });
+      });
+
+    // Mobile Navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const body = document.body;
+    
+    hamburger.addEventListener('click', function() {
+        body.classList.toggle('mobile-nav-active');
+    });
+    
+    // Add click handlers for dropdowns in mobile view
+    document.querySelectorAll('nav .dropdown > a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                this.parentElement.classList.toggle('open');
+            }
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (body.classList.contains('mobile-nav-active') && 
+            !e.target.closest('nav') && 
+            !e.target.closest('.hamburger-menu')) {
+            body.classList.remove('mobile-nav-active');
+        }
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (body.classList.contains('mobile-nav-active') && 
+                !this.parentElement.classList.contains('dropdown')) {
+                body.classList.remove('mobile-nav-active');
+            }
+        });
+    });
+});
+  </script>
+</body>
+</html>
